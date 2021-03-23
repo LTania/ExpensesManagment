@@ -1,0 +1,24 @@
+<div class="container" >
+  <p>You can use this command:</p>
+  <ul>
+    <li>add 2021-03-05 6 USD Cake</li>
+    <li>add 2021-03-05 6 USD "My Cake"</li>
+    <li>clear 2021-03-05</li>
+    <li>total UAH</li>
+    <li>list</li>
+  </ul>
+  <mat-form-field class="form-field">
+    <mat-label>Enter command</mat-label>
+    <input matInput type="text" [(ngModel)]="command">
+    <button mat-button *ngIf="command" matSuffix mat-icon-button aria-label="Clear" (click)="run()">
+      <mat-icon>not_started</mat-icon>
+    </button>
+  </mat-form-field>
+  <div class="message-box" *ngIf="isShownMessage">
+    <p>{{ message }}</p>
+  </div>
+  <div class="list-box" *ngIf="isShownList">
+    <app-expenses-list></app-expenses-list>
+  </div>
+</div>
+

@@ -1,0 +1,8 @@
+<p *ngIf="!expensesList.length">List is empty!</p>
+<div class="list-item" *ngFor="let item of expensesList">
+  <mat-card>
+    <p>{{ item.product }}</p>
+    <p>{{ item.amountMoney }} {{ item.currency }}</p>
+    <p>{{ item.occurredDate.toDateString() }}</p>
+  </mat-card>
+</div>
